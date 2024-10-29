@@ -15,6 +15,6 @@ namespace WindowsFormsApp1
         public string Phone;
         public int Rating;
         public string Discount;
-        public int TotalQuantity;
+        public int TotalQuantity = 0;
     }
 }

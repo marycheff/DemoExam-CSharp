@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
                             DirectorName = reader.GetString("director_name"),
                             Rating = reader.GetInt32("rating"),
                             Phone = reader.GetString("phone_number"),
-                            totalQuantity = GetPartnerTotaltotalQuantity(reader.GetInt32("partner_id"))
+                            TotalQuantity = GetPartnerTotaltotalQuantity(reader.GetInt32("partner_id"))
 
                         };
 
