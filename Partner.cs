@@ -11,10 +11,15 @@ namespace WindowsFormsApp1
         public int Id;
         public string Name;
         public string Type;
+        public int TypeId;
+
+
         public string DirectorName;
+        public string Address;
+        public string Email;
         public string Phone;
         public int Rating;
         public string Discount;
-        public int TotalQuantity;
+        public int TotalQuantity = 0;
     }
 }

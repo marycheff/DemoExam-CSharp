@@ -89,7 +89,7 @@
             this.Discount.Size = new System.Drawing.Size(45, 20);
             this.Discount.TabIndex = 4;
             this.Discount.Text = "100%";
-            this.Discount.Click += new System.EventHandler(this.Discount_Click);
+            
             // 
             // PartnerControl
             // 

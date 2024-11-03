@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 20 2024 г., 00:47
+-- Время создания: Окт 29 2024 г., 12:44
 -- Версия сервера: 8.0.30
--- Версия PHP: 7.4.30
+-- Версия PHP: 8.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,7 +50,7 @@ CREATE TABLE `partners` (
   `partner_type_id` int DEFAULT NULL,
   `company_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `legal_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `INN` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `INN` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `director_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `phone_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -65,11 +65,16 @@ CREATE TABLE `partners` (
 --
 
 INSERT INTO `partners` (`partner_id`, `partner_type_id`, `company_name`, `legal_address`, `INN`, `director_name`, `phone_number`, `email`, `logo`, `rating`, `created_at`, `updated_at`) VALUES
-(1, 1, 'База Строитель', '652050, Кемеровская область, город Юрга, ул. Лесная, 15', '2222455179', 'Иванова Александра Ивановна', '493 123 45 67', 'aleksandraivanova@ml.ru', NULL, 7, '2024-09-17 06:55:12', '2024-09-17 09:22:08'),
+(1, 1, 'База Строитель', '652050, Кемеровская область, город Юрга, ул. Лесная, 15', '2222455179', 'Иванова Александра Ивановна', '493 123 45 67', 'aleksandraivanova@ml.ru', NULL, 7, '2024-09-17 06:55:12', '2024-10-29 08:24:34'),
 (2, 2, 'Паркет 29', '164500, Архангельская область, город Северодвинск, ул. Строителей, 18', '3333888520', 'Петров Василий Петрович', '987 123 56 78', 'vppetrov@vl.ru', NULL, 7, '2024-09-17 07:00:21', '2024-09-17 09:22:22'),
 (3, 3, 'Стройсервис', '188910, Ленинградская область, город Приморск, ул. Парковая, 21', '4440391035', 'Соловьев Андрей Николаевич', '812 223 32 00', 'ansolovev@st.ru', NULL, 7, '2024-09-17 07:00:21', '2024-09-17 09:22:30'),
 (4, 4, 'Ремонт и отделка', '143960, Московская область, город Реутов, ул. Свободы, 51', '1111520857', 'Воробьева Екатерина Валерьевна', '444 222 33 11', 'ekaterina.vorobeva@ml.ru', NULL, 5, '2024-09-17 07:03:38', '2024-09-17 09:22:54'),
-(5, 1, 'МонтажПро', '309500, Белгородская область, город Старый Оскол, ул. Рабочая, 122\r\n', '5552431140', 'Степанов Степан Сергеевич', '912 888 33 33', 'stepanov@stepan.ru', NULL, 10, '2024-09-17 07:03:38', '2024-09-17 09:23:07');
+(5, 1, 'МонтажПро', '309500, Белгородская область, город Старый Оскол, ул. Рабочая, 122\r\n', '5552431140', 'Степанов Степан Сергеевич', '912 888 33 33', 'stepanov@stepan.ru', NULL, 10, '2024-09-17 07:03:38', '2024-09-17 09:23:07'),
+(11, 1, '53453', 'terer', NULL, 'gfdgdf', '+7 534 534 5345', 'tgdfgdf', NULL, 4, '2024-10-29 08:47:01', '2024-10-29 08:47:01'),
+(12, 1, '4324234', 'fdsfsd', NULL, 'fdsfs', '+7 999 999 9999', '65464', NULL, 0, '2024-10-29 08:50:09', '2024-10-29 08:50:09'),
+(13, 1, '423', 'fdsfsdfsd', NULL, 'fsdfsdfsd', ' 423 423 4234', '423423', NULL, 7, '2024-10-29 09:16:38', '2024-10-29 09:16:38'),
+(14, 1, '42342', 'rwerw', NULL, 'rwerwe', ' 543 534 53 45', '5534534', NULL, 8, '2024-10-29 09:20:30', '2024-10-29 09:20:30'),
+(15, 1, '11111111111111', '11111111111', NULL, '11111111111', ' 111 111 11 11', '11111111111', NULL, 10, '2024-10-29 09:20:45', '2024-10-29 09:20:45');
 
 -- --------------------------------------------------------
 
@@ -311,7 +316,7 @@ ALTER TABLE `sales_place_types`
 -- AUTO_INCREMENT для таблицы `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `partner_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `partner_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `partners_types`

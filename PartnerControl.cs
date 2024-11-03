@@ -12,22 +12,20 @@ namespace WindowsFormsApp1
 {
     public partial class PartnerControl : UserControl
     {
-        public PartnerControl(string partnerType, string partnerName, string directorName, string phone, int rating, int totalQuantity)
+        public int PartnerID;
+        public PartnerControl(int id,string partnerType, string partnerName, string directorName, string phone, int rating, int totalQuantity)
         {
             InitializeComponent();
+            this.Cursor = Cursors.Hand;
+            this.PartnerID = id;
             PartnerName.Text = partnerType + " " + partnerName;
             DirectorName.Text = directorName;
             Phone.Text =  $"+7 {phone}";
             Rating.Text = $"Рейтинг: {rating.ToString()}";
             Discount.Text = (CalculateDiscount(totalQuantity) * 100).ToString() + '%';
-
-
         }
 
-        private void Discount_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         public static float CalculateDiscount(int totalQuantity)
         {
             float discount = 0;
