@@ -1,25 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WindowsFormsApp1
+﻿namespace WindowsFormsApp1
 {
     internal class Partner
     {
-        public int Id;
-        public string Name;
-        public string Type;
-        public int TypeId;
-
-
-        public string DirectorName;
-        public string Address;
-        public string Email;
-        public string Phone;
-        public int Rating;
-        public string Discount;
-        public int TotalQuantity = 0;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public int TypeId { get; set; }
+        public string DirectorName { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public int Rating { get; set; }
+        public int TotalQuantity { get; set; } = 0; // Инициализация по умолчанию
     }
 }

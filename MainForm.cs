@@ -7,12 +7,15 @@ namespace WindowsFormsApp1
     {
         public MainForm()
         {
-            InitializeComponent();     
+            InitializeComponent();
+
+            // Получение всех данных о партнере при инициализации формы
             RefreshPartners();
         }
 
         private void RefreshPartners()
         {
+            //Очистка педыдущих UserConrol
             if (flowLayoutPanel1.Controls.Count > 0)
             {
                 Control currentControl = flowLayoutPanel1.Controls[0];
@@ -20,6 +23,8 @@ namespace WindowsFormsApp1
                 flowLayoutPanel1.Controls.Clear();
                 currentControl.Dispose();
             }
+
+            //Для каждого партнера создается свой UserControl
             List<Partner> partners = DB.GetAllPartners();
             foreach (var partner in partners)
             {
@@ -29,13 +34,15 @@ namespace WindowsFormsApp1
             }
 
         }
-
+        // Обработка клика на каждого партнера
         private void Control_Click(object sender, System.EventArgs e)
         {
             PartnerControl clickedControl = sender as PartnerControl;
             int partnerID = clickedControl.PartnerID;
             UpdatePartnerForm updatePartnerForm = new UpdatePartnerForm(partnerID);
             updatePartnerForm.ShowDialog();
+
+            // Обновление данных при закрытии дочерней формы
             if (updatePartnerForm.DialogResult == DialogResult.OK)
             {
                 RefreshPartners();
@@ -44,10 +51,12 @@ namespace WindowsFormsApp1
 
         }
 
-        private void btnAddPartner_Click(object sender, System.EventArgs e)
+        private void BtnAddPartner_Click(object sender, System.EventArgs e)
         {
-            var addPartnerForm = new AddPartnerForm();
+            AddPartnerForm addPartnerForm = new AddPartnerForm();
             addPartnerForm.ShowDialog();
+
+            // Обновление данных при закрытии дочерней формы
             if(addPartnerForm.DialogResult == DialogResult.OK)
             {
                 RefreshPartners();

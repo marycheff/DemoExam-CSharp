@@ -83,13 +83,12 @@
             // 
             this.Discount.AutoSize = true;
             this.Discount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Discount.Location = new System.Drawing.Point(524, 11);
+            this.Discount.Location = new System.Drawing.Point(691, 11);
             this.Discount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Discount.Name = "Discount";
             this.Discount.Size = new System.Drawing.Size(45, 20);
             this.Discount.TabIndex = 4;
             this.Discount.Text = "100%";
-            
             // 
             // PartnerControl
             // 
@@ -100,10 +99,11 @@
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.DirectorName);
             this.Controls.Add(this.PartnerName);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PartnerControl";
-            this.Size = new System.Drawing.Size(600, 85);
+            this.Size = new System.Drawing.Size(760, 85);
             this.ResumeLayout(false);
             this.PerformLayout();
 

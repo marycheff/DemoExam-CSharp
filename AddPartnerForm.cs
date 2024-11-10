@@ -12,18 +12,19 @@ namespace WindowsFormsApp1
 {
     public partial class AddPartnerForm : Form
     {
-        bool Saved = false;
-        
+
         public AddPartnerForm()
         {
             InitializeComponent();
             List<string> partnersTypes = DB.GetPartnersTypes();
-            comboPartnerType.Items.AddRange(partnersTypes.ToArray());
+
+            // Заполнение выпадающего списка
+            comboPartnerType.Items.AddRange(partnersTypes.ToArray()); 
             comboPartnerType.SelectedIndex = 0;
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             string directorName = textDirectorName.Text.ToString().Trim();
             string email = textPartnerEmail.Text.ToString().Trim();
@@ -53,13 +54,15 @@ namespace WindowsFormsApp1
 
             DB.AddPartner(partner);
             MessageBox.Show("Партнер добавлен", "Добавление партнера", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Закрытие формы, передача результата диалога в родительскую форму
             this.DialogResult = DialogResult.OK;
             this.Close();
 
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }

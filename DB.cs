@@ -7,6 +7,7 @@ namespace WindowsFormsApp1
 {
     internal class DB
     {
+        // Установка соединения с БД
         public static MySqlConnection GetConnection()
         {
             string query = "datasource=localhost;port=3306; username=root;password=; database=master_pol";
@@ -27,6 +28,7 @@ namespace WindowsFormsApp1
             MySqlConnection conn = GetConnection();
             try
             {
+                // Запрос к БД с использованием JOIN для получения строкового значения типа компании
                 string query = "SELECT partner_id, partners_types.name AS 'type', company_name, director_name, phone_number, rating " +
                     "FROM partners " +
                     "INNER JOIN partners_types ON partner_type_id = partners_types.id " +
@@ -44,7 +46,7 @@ namespace WindowsFormsApp1
                             DirectorName = reader.GetString("director_name"),
                             Rating = reader.GetInt32("rating"),
                             Phone = reader.GetString("phone_number"),
-                            TotalQuantity = GetPartnerTotaltotalQuantity(reader.GetInt32("partner_id"))
+                            TotalQuantity = GetPartnerTotalQuantity(reader.GetInt32("partner_id"))
 
                         };
 
@@ -63,7 +65,7 @@ namespace WindowsFormsApp1
 
             return partners;
         }
-        public static int GetPartnerTotaltotalQuantity(int partnerId)
+        public static int GetPartnerTotalQuantity(int partnerId)
         {
             int totalQuantity = 0;
             MySqlConnection conn = GetConnection();
@@ -101,26 +103,16 @@ namespace WindowsFormsApp1
             MySqlConnection conn = GetConnection();
             List<string> partnersTypes = new List<string>();
             try
-
             {
-
-
                 string query = "SELECT name FROM partners_types ORDER BY id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-
-
-
                 using (MySqlDataReader reader = cmd.ExecuteReader())
-
                 {
-
                     while (reader.Read())
 
                     {
-
                         partnersTypes.Add(reader.GetString("name"));
-
                     }
 
                 }
@@ -154,7 +146,6 @@ namespace WindowsFormsApp1
                     cmd.Parameters.AddWithValue("@email", partner.Email);
                     cmd.Parameters.AddWithValue("@rating", partner.Rating);
                     cmd.Parameters.AddWithValue("@director_name", partner.DirectorName);
-
 
                     cmd.ExecuteNonQuery();
                 }

@@ -25,16 +25,14 @@ namespace WindowsFormsApp1
             textPartnerPhone.Text = partner.Phone;
             numericPartnerRating.Value = partner.Rating;
 
-
-
-
+            // Заполнение выпадающего списка
             List<string> partnersTypes = DB.GetPartnersTypes();
             comboPartnerType.Items.AddRange(partnersTypes.ToArray());
             comboPartnerType.SelectedIndex = partner.TypeId - 1;
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
 
             string directorName = textDirectorName.Text.ToString().Trim();
@@ -68,12 +66,14 @@ namespace WindowsFormsApp1
 
             DB.UpdatePartner(updatedPartner);
             MessageBox.Show("Данные обновлены", "Обновление данных партнера", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Закрытие формы, передача результата диалога в родительскую форму
             this.DialogResult = DialogResult.OK;
             this.Close();
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }

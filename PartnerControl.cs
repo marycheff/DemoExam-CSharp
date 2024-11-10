@@ -16,13 +16,18 @@ namespace WindowsFormsApp1
         public PartnerControl(int id,string partnerType, string partnerName, string directorName, string phone, int rating, int totalQuantity)
         {
             InitializeComponent();
-            this.Cursor = Cursors.Hand;
+   
             this.PartnerID = id;
+
             PartnerName.Text = partnerType + " " + partnerName;
             DirectorName.Text = directorName;
             Phone.Text =  $"+7 {phone}";
             Rating.Text = $"Рейтинг: {rating.ToString()}";
             Discount.Text = (CalculateDiscount(totalQuantity) * 100).ToString() + '%';
+
+            // Применение цвета при наведении мыши на UserControl
+            this.MouseEnter += PartnerControl_MouseEnter;
+            this.MouseLeave += PartnerControl_MouseLeave;
         }
 
         
@@ -44,6 +49,19 @@ namespace WindowsFormsApp1
             }
 
             return discount;
+        }
+
+        private void PartnerControl_MouseEnter(object sender, EventArgs e)
+
+        {
+            this.BackColor = Color.FromArgb(103, 186, 128); 
+        }
+
+
+        private void PartnerControl_MouseLeave(object sender, EventArgs e)
+
+        {
+            this.BackColor = SystemColors.Control; 
         }
 
 
