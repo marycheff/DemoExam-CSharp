@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Окт 29 2024 г., 12:44
--- Версия сервера: 8.0.30
--- Версия PHP: 8.1.9
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 10, 2024 at 11:47 AM
+-- Server version: 8.0.30
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `master_pol`
+-- Database: `master_pol`
 --
 CREATE DATABASE IF NOT EXISTS `master_pol` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `master_pol`;
@@ -26,7 +26,7 @@ USE `master_pol`;
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `employees`
+-- Table structure for table `employees`
 --
 
 CREATE TABLE `employees` (
@@ -42,7 +42,7 @@ CREATE TABLE `employees` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `partners`
+-- Table structure for table `partners`
 --
 
 CREATE TABLE `partners` (
@@ -61,25 +61,20 @@ CREATE TABLE `partners` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `partners`
+-- Dumping data for table `partners`
 --
 
 INSERT INTO `partners` (`partner_id`, `partner_type_id`, `company_name`, `legal_address`, `INN`, `director_name`, `phone_number`, `email`, `logo`, `rating`, `created_at`, `updated_at`) VALUES
-(1, 1, 'База Строитель', '652050, Кемеровская область, город Юрга, ул. Лесная, 15', '2222455179', 'Иванова Александра Ивановна', '493 123 45 67', 'aleksandraivanova@ml.ru', NULL, 7, '2024-09-17 06:55:12', '2024-10-29 08:24:34'),
+(1, 1, 'База Строитель', '652050, Кемеровская область, город Юрга, ул. Лесная, 15', '2222455179', 'Иванова Александра Ивановна', '493 123 45 67', 'aleksandraivanova@ml.ru', NULL, 10, '2024-09-17 06:55:12', '2024-11-03 14:20:13'),
 (2, 2, 'Паркет 29', '164500, Архангельская область, город Северодвинск, ул. Строителей, 18', '3333888520', 'Петров Василий Петрович', '987 123 56 78', 'vppetrov@vl.ru', NULL, 7, '2024-09-17 07:00:21', '2024-09-17 09:22:22'),
 (3, 3, 'Стройсервис', '188910, Ленинградская область, город Приморск, ул. Парковая, 21', '4440391035', 'Соловьев Андрей Николаевич', '812 223 32 00', 'ansolovev@st.ru', NULL, 7, '2024-09-17 07:00:21', '2024-09-17 09:22:30'),
 (4, 4, 'Ремонт и отделка', '143960, Московская область, город Реутов, ул. Свободы, 51', '1111520857', 'Воробьева Екатерина Валерьевна', '444 222 33 11', 'ekaterina.vorobeva@ml.ru', NULL, 5, '2024-09-17 07:03:38', '2024-09-17 09:22:54'),
-(5, 1, 'МонтажПро', '309500, Белгородская область, город Старый Оскол, ул. Рабочая, 122\r\n', '5552431140', 'Степанов Степан Сергеевич', '912 888 33 33', 'stepanov@stepan.ru', NULL, 10, '2024-09-17 07:03:38', '2024-09-17 09:23:07'),
-(11, 1, '53453', 'terer', NULL, 'gfdgdf', '+7 534 534 5345', 'tgdfgdf', NULL, 4, '2024-10-29 08:47:01', '2024-10-29 08:47:01'),
-(12, 1, '4324234', 'fdsfsd', NULL, 'fdsfs', '+7 999 999 9999', '65464', NULL, 0, '2024-10-29 08:50:09', '2024-10-29 08:50:09'),
-(13, 1, '423', 'fdsfsdfsd', NULL, 'fsdfsdfsd', ' 423 423 4234', '423423', NULL, 7, '2024-10-29 09:16:38', '2024-10-29 09:16:38'),
-(14, 1, '42342', 'rwerw', NULL, 'rwerwe', ' 543 534 53 45', '5534534', NULL, 8, '2024-10-29 09:20:30', '2024-10-29 09:20:30'),
-(15, 1, '11111111111111', '11111111111', NULL, '11111111111', ' 111 111 11 11', '11111111111', NULL, 10, '2024-10-29 09:20:45', '2024-10-29 09:20:45');
+(5, 1, 'МонтажПро', '309500, Белгородская область, город Старый Оскол, ул. Рабочая, 122\r\n', '5552431140', 'Степанов Степан Сергеевич', '912 888 33 33', 'stepanov@stepan.ru', NULL, 10, '2024-09-17 07:03:38', '2024-09-17 09:23:07');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `partners_types`
+-- Table structure for table `partners_types`
 --
 
 CREATE TABLE `partners_types` (
@@ -88,7 +83,7 @@ CREATE TABLE `partners_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `partners_types`
+-- Dumping data for table `partners_types`
 --
 
 INSERT INTO `partners_types` (`id`, `name`) VALUES
@@ -100,7 +95,7 @@ INSERT INTO `partners_types` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `partner_discounts`
+-- Table structure for table `partner_discounts`
 --
 
 CREATE TABLE `partner_discounts` (
@@ -114,7 +109,7 @@ CREATE TABLE `partner_discounts` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `partner_sales_history`
+-- Table structure for table `partner_sales_history`
 --
 
 CREATE TABLE `partner_sales_history` (
@@ -126,7 +121,7 @@ CREATE TABLE `partner_sales_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `partner_sales_history`
+-- Dumping data for table `partner_sales_history`
 --
 
 INSERT INTO `partner_sales_history` (`sales_id`, `partner_id`, `product_id`, `quantity`, `sales_date`) VALUES
@@ -150,7 +145,7 @@ INSERT INTO `partner_sales_history` (`sales_id`, `partner_id`, `product_id`, `qu
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `partner_sales_places`
+-- Table structure for table `partner_sales_places`
 --
 
 CREATE TABLE `partner_sales_places` (
@@ -164,7 +159,7 @@ CREATE TABLE `partner_sales_places` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -182,7 +177,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `article`, `product_type_id`, `description`, `image`, `min_partner_price`, `package_size`, `weight`, `production_time`, `cost_price`) VALUES
@@ -195,7 +190,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `article`, `product_type_i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `products_types`
+-- Table structure for table `products_types`
 --
 
 CREATE TABLE `products_types` (
@@ -205,7 +200,7 @@ CREATE TABLE `products_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `products_types`
+-- Dumping data for table `products_types`
 --
 
 INSERT INTO `products_types` (`id`, `name`, `product_type_coefficient`) VALUES
@@ -217,7 +212,7 @@ INSERT INTO `products_types` (`id`, `name`, `product_type_coefficient`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `product_sales`
+-- Table structure for table `product_sales`
 --
 
 CREATE TABLE `product_sales` (
@@ -232,7 +227,7 @@ CREATE TABLE `product_sales` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `sales_place_types`
+-- Table structure for table `sales_place_types`
 --
 
 CREATE TABLE `sales_place_types` (
@@ -241,11 +236,11 @@ CREATE TABLE `sales_place_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `partners`
+-- Indexes for table `partners`
 --
 ALTER TABLE `partners`
   ADD PRIMARY KEY (`partner_id`),
@@ -253,20 +248,20 @@ ALTER TABLE `partners`
   ADD KEY `partner_type_id` (`partner_type_id`);
 
 --
--- Индексы таблицы `partners_types`
+-- Indexes for table `partners_types`
 --
 ALTER TABLE `partners_types`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `partner_discounts`
+-- Indexes for table `partner_discounts`
 --
 ALTER TABLE `partner_discounts`
   ADD PRIMARY KEY (`discount_id`),
   ADD KEY `partner_id` (`partner_id`);
 
 --
--- Индексы таблицы `partner_sales_history`
+-- Indexes for table `partner_sales_history`
 --
 ALTER TABLE `partner_sales_history`
   ADD PRIMARY KEY (`sales_id`),
@@ -274,7 +269,7 @@ ALTER TABLE `partner_sales_history`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `partner_sales_places`
+-- Indexes for table `partner_sales_places`
 --
 ALTER TABLE `partner_sales_places`
   ADD PRIMARY KEY (`place_id`),
@@ -282,20 +277,20 @@ ALTER TABLE `partner_sales_places`
   ADD KEY `place_type_id` (`place_type_id`);
 
 --
--- Индексы таблицы `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `product_type` (`product_type_id`);
 
 --
--- Индексы таблицы `products_types`
+-- Indexes for table `products_types`
 --
 ALTER TABLE `products_types`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `product_sales`
+-- Indexes for table `product_sales`
 --
 ALTER TABLE `product_sales`
   ADD PRIMARY KEY (`sale_id`),
@@ -303,107 +298,107 @@ ALTER TABLE `product_sales`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Индексы таблицы `sales_place_types`
+-- Indexes for table `sales_place_types`
 --
 ALTER TABLE `sales_place_types`
   ADD PRIMARY KEY (`place_type_id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `partners`
+-- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `partner_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `partner_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT для таблицы `partners_types`
+-- AUTO_INCREMENT for table `partners_types`
 --
 ALTER TABLE `partners_types`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `partner_discounts`
+-- AUTO_INCREMENT for table `partner_discounts`
 --
 ALTER TABLE `partner_discounts`
   MODIFY `discount_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `partner_sales_history`
+-- AUTO_INCREMENT for table `partner_sales_history`
 --
 ALTER TABLE `partner_sales_history`
   MODIFY `sales_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT для таблицы `partner_sales_places`
+-- AUTO_INCREMENT for table `partner_sales_places`
 --
 ALTER TABLE `partner_sales_places`
   MODIFY `place_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `products_types`
+-- AUTO_INCREMENT for table `products_types`
 --
 ALTER TABLE `products_types`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `product_sales`
+-- AUTO_INCREMENT for table `product_sales`
 --
 ALTER TABLE `product_sales`
   MODIFY `sale_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `sales_place_types`
+-- AUTO_INCREMENT for table `sales_place_types`
 --
 ALTER TABLE `sales_place_types`
   MODIFY `place_type_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `partners`
+-- Constraints for table `partners`
 --
 ALTER TABLE `partners`
   ADD CONSTRAINT `partners_ibfk_1` FOREIGN KEY (`partner_type_id`) REFERENCES `partners_types` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `partner_discounts`
+-- Constraints for table `partner_discounts`
 --
 ALTER TABLE `partner_discounts`
   ADD CONSTRAINT `partner_discounts_ibfk_1` FOREIGN KEY (`partner_id`) REFERENCES `partners` (`partner_id`);
 
 --
--- Ограничения внешнего ключа таблицы `partner_sales_history`
+-- Constraints for table `partner_sales_history`
 --
 ALTER TABLE `partner_sales_history`
   ADD CONSTRAINT `partner_sales_history_ibfk_1` FOREIGN KEY (`partner_id`) REFERENCES `partners` (`partner_id`),
   ADD CONSTRAINT `partner_sales_history_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 --
--- Ограничения внешнего ключа таблицы `partner_sales_places`
+-- Constraints for table `partner_sales_places`
 --
 ALTER TABLE `partner_sales_places`
   ADD CONSTRAINT `partner_sales_places_ibfk_1` FOREIGN KEY (`partner_id`) REFERENCES `partners` (`partner_id`),
   ADD CONSTRAINT `partner_sales_places_ibfk_2` FOREIGN KEY (`place_type_id`) REFERENCES `sales_place_types` (`place_type_id`);
 
 --
--- Ограничения внешнего ключа таблицы `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`product_type_id`) REFERENCES `products_types` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `product_sales`
+-- Constraints for table `product_sales`
 --
 ALTER TABLE `product_sales`
   ADD CONSTRAINT `product_sales_ibfk_1` FOREIGN KEY (`partner_id`) REFERENCES `partners` (`partner_id`),
